@@ -2,26 +2,30 @@ import java.util.Scanner;
 
 public class AirP {
 
-    //instance variable
-    String brand;
+    
+    String brand;  //instance variable
 
-    boolean power_on;
+    boolean power_on;  //instance variable
 
-    String sn;
+    String sn;  //instance variable
 
-    int aqi;
+    int aqi;  //instance variable
 
-    boolean savemode;
+    boolean savemode;  //instance variable
     
     //instance methods
+    //input = none
+    //output = none
+    //overview = ถ้าผู้ใช้ไม่ใส่อะไรเลย power on = false / savemode =false
     public AirP(){
         power_on = false;
         savemode = false;
     }
 
-    
+    //instance methods
     //input = aqiinput
     //output = message
+    //overview = คำนวณค่าที่ได้จาก user
     public void AQIcalculator(int aqi){
     if(aqi > 200){
         System.out.println ("This air is Affects health" );
@@ -36,44 +40,55 @@ public class AirP {
     }
 }
 
-
+    //instance methods
     //input = none
     //output = none
+    //overview = ทำการเปิดเครื่องเมื่อเรียกใช้
     void turn_on(){
         power_on = true;
         savemode = false;
         System.out.println("Airpurifier is on!!!");
 
     }
+    //instance methods
     //input = none
     //output = none
+    //overview = ทำการปิดเครื่องเมื่อเรียกใช้
     void turn_off(){
         power_on = false;
         savemode = false;
         System.out.println("Airpurifier is off!!!");
     }
+    //instance methods
     //input = none
     //output = none
+    //overview = เปิดโหมดประหยัดพลังงานเมื่อเรียกใช้
     void savepowermode_on(){
         savemode = true;
         System.out.println("Savemode is on");
     }
+    //instance methods
     //input = none
     //output = none
+    //overview = ปิดโหมดประหยัดพลังงานเมื่อเรียกใช้
     void savepowermode_off(){
         savemode = false;
         System.out.println("Savemode is off");
     }
+    //instance methods
     //input = brand sn aqi
     //output = none
+    //overview = รับค่ามาและนำค่ามาใช้
     AirP(String brand ,String sn ,int aqi ){
         this.brand = brand;
         this.sn = sn;
         this.aqi = aqi;
         
     }
+    //instance methods
     //input = brand ,sn ,aqi
     //output = message
+    //overview = นำค่าที่ได้มาใส่ message
     public void displaystatus(){
         System.out.println("Brand = "+this.brand);
         System.out.println("Serial number = "+this.sn);
@@ -89,27 +104,28 @@ public class AirP {
     public void setaqi(int aqi){
         this.aqi = aqi;
     }
+    //instance methods
     //input = user input
     //output = none
+    //overview = รับค่า AQI จากผู้ใช้
     public static int aqiinput(Scanner scanner){
         System.out.print("Input AQI:");
         return scanner.nextInt();
     }
-    
-    //class variable
 
-    private static String mostPopularBrand = "HEE";
+    private static String mostPopularBrand = "HEE"; //class variable
+
 
     
-    // class methods
 
     //input = mostPopularBrand
     //output = brand
-    public static String getMostPopularBrand() {
+    //overview = รับค่าจาก  mostPopularBrand มาแสดง
+    public static String getMostPopularBrand() {  // class methods
         return mostPopularBrand;
     }
 
-    public static void setMostPopularBrand(String brand) {
+    public static void setMostPopularBrand(String brand) { // class methods
         mostPopularBrand = brand;
     }
     }
