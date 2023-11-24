@@ -113,7 +113,7 @@ public class AirP {
         return scanner.nextInt();
     }
 
-    private static String mostPopularBrand = "HEE"; //class variable
+    private static String mostPopularBrand = "HEE is mostPopularBrand"; //class variable
 
 
     
